@@ -31,12 +31,17 @@ class HomeController extends Controller
       // FirebaseAuth.getInstance().getCurrentUser();
       try {
         $uid = Session::get('uid');
-        $user = app('firebase.auth')->getUser($uid);
+        // $user = app('firebase.auth')->getUser($uid);
         return view('home');
       } catch (\Exception $e) {
         return $e;
       }
 
+    }
+
+    public function home()
+    {
+        return view('home_page');
     }
 
     // public function customer()
